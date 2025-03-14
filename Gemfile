@@ -68,3 +68,5 @@ gem "byebug", "~> 11.1", :groups => [:development, :test]
 
 gem "dotenv-rails", "~> 3.1"
 
+gem "simple_form"
+

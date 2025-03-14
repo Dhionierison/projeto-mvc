@@ -1,18 +1,33 @@
-<%= form_with(model: @product) do |form| %>
-<%= form.label :name %>
-<%= form.text_field :name %>
+<div class="container">
+<div class="card p-5">
+<%= form_with(model: @product, html: { class: "needs-validation", novalidate: true }) do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, "Nome", class: "form-label" %>
+    <%= form.text_field :name, class: "form-control", required: true %>
+    <div class="invalid-feedback">
+      Por favor, insira um nome válido.
+    </div>
+  </div>
 
-<%= form.label :quantity %>
-<%= form.number_field :quantity %>
+  <div class="mb-3">
+    <%= form.label :quantidade, "Quantidade", class: "form-label" %>
+    <%= form.number_field :quantidade, class: "form-control", required: true %>
+    <div class="invalid-feedback">
+      Por favor, insira uma quantidade válida.
+    </div>
+  </div>
 
+  <div class="mb-3">
+    <%= form.label :price, "Preço", class: "form-label" %>
+    <%= form.number_field :price, class: "form-control", step: "0.01", required: true %>
+    <div class="invalid-feedback">
+      Por favor, insira um preço válido.
+    </div>
+  </div>
 
-<%= form.label :price %>
-<%= form.number_field :price %>
-
-
-<%= form.submit "Salvar" %>
-
+  <div class="mb-3">
+    <%= form.submit "Salvar", class: "btn btn-primary" %>
+  </div>
 <% end %>
-
-
-
+</div>
+</div>
